@@ -37,6 +37,8 @@ JOIN InvoiceLine il ON t.TrackId = il.TrackId
 GROUP BY g.Name
 ORDER BY Tracks_Sold DESC
 LIMIT 5;
+
+
 <img width="371" height="149" alt="image" src="https://github.com/user-attachments/assets/a24fa4ae-d5b4-41d3-85a7-94c60891866d" />
 
 SELECT 
