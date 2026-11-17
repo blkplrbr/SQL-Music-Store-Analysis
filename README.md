@@ -27,4 +27,61 @@ The project utilizes the classic Chinook SQLite database, which includes tables 
 *   **Data Sorting:** Applying `ORDER BY DESC` and `LIMIT` to extract top-tier insights.
 
 ## Status
-🚧 **Work in Progress:** The SQL scripts and visual outputs will be uploaded shortly.
+
+SELECT 
+    g.Name AS Genre, 
+    SUM(il.Quantity) AS Tracks_Sold
+FROM Genre g
+JOIN Track t ON g.GenreId = t.GenreId
+JOIN InvoiceLine il ON t.TrackId = il.TrackId
+GROUP BY g.Name
+ORDER BY Tracks_Sold DESC
+LIMIT 5;
+<img width="371" height="149" alt="image" src="https://github.com/user-attachments/assets/a24fa4ae-d5b4-41d3-85a7-94c60891866d" />
+
+SELECT 
+    c.FirstName, 
+    c.LastName, 
+    c.Country, 
+    SUM(i.Total) AS Total_Spent
+FROM Customer c
+JOIN Invoice i ON c.CustomerId = i.CustomerId
+GROUP BY c.CustomerId
+ORDER BY Total_Spent DESC
+LIMIT 5;
+<img width="236" height="625" alt="image" src="https://github.com/user-attachments/assets/32fc2a93-0827-45c3-aa43-21896032f1f6" />
+
+SELECT 
+    BillingCountry, 
+    SUM(Total) AS Total_Revenue
+FROM Invoice
+GROUP BY BillingCountry
+ORDER BY Total_Revenue DESC
+<img width="246" height="150" alt="image" src="https://github.com/user-attachments/assets/45382c1d-d260-4faa-8b68-2fbf67cbbb48" />
+
+SELECT 
+    ar.Name AS Artist, 
+    SUM(il.UnitPrice * il.Quantity) AS Total_Revenue
+FROM Artist ar
+JOIN Album al ON ar.ArtistId = al.ArtistId
+JOIN Track t ON al.AlbumId = t.AlbumId
+JOIN InvoiceLine il ON t.TrackId = il.TrackId
+GROUP BY ar.Name
+ORDER BY Total_Revenue DESC
+LIMIT 5;
+
+<img width="208" height="149" alt="image" src="https://github.com/user-attachments/assets/4c290437-5fc1-4cd9-99b5-4eb5e6e1c438" />
+
+SELECT 
+    e.FirstName, 
+    e.LastName, 
+    e.Title, 
+    SUM(i.Total) AS Total_Revenue_Generated
+FROM Employee e
+JOIN Customer c ON e.EmployeeId = c.SupportRepId
+JOIN Invoice i ON c.CustomerId = i.CustomerId
+GROUP BY e.EmployeeId
+ORDER BY Total_Revenue_Generated DESC
+LIMIT 3;
+<img width="459" height="102" alt="image" src="https://github.com/user-attachments/assets/25aa7814-600b-4a86-8678-12da67817a87" />
+
