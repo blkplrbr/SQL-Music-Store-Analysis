@@ -51,6 +51,8 @@ JOIN Invoice i ON c.CustomerId = i.CustomerId
 GROUP BY c.CustomerId
 ORDER BY Total_Spent DESC
 LIMIT 5;
+
+
 <img width="236" height="625" alt="image" src="https://github.com/user-attachments/assets/32fc2a93-0827-45c3-aa43-21896032f1f6" />
 
 SELECT 
@@ -59,6 +61,8 @@ SELECT
 FROM Invoice
 GROUP BY BillingCountry
 ORDER BY Total_Revenue DESC
+
+
 <img width="246" height="150" alt="image" src="https://github.com/user-attachments/assets/45382c1d-d260-4faa-8b68-2fbf67cbbb48" />
 
 SELECT 
@@ -71,6 +75,7 @@ JOIN InvoiceLine il ON t.TrackId = il.TrackId
 GROUP BY ar.Name
 ORDER BY Total_Revenue DESC
 LIMIT 5;
+
 
 <img width="208" height="149" alt="image" src="https://github.com/user-attachments/assets/4c290437-5fc1-4cd9-99b5-4eb5e6e1c438" />
 
@@ -85,5 +90,7 @@ JOIN Invoice i ON c.CustomerId = i.CustomerId
 GROUP BY e.EmployeeId
 ORDER BY Total_Revenue_Generated DESC
 LIMIT 3;
+
+
 <img width="459" height="102" alt="image" src="https://github.com/user-attachments/assets/25aa7814-600b-4a86-8678-12da67817a87" />
 
