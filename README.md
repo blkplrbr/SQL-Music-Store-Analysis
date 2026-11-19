@@ -45,7 +45,7 @@ The project utilizes the classic Chinook SQLite database, which includes tables 
 
 <img width="208" height="149" alt="image" src="https://github.com/user-attachments/assets/4c290437-5fc1-4cd9-99b5-4eb5e6e1c438" />
 
-5Top Sales agents
+5. Top Sales agents
 
 <img width="459" height="102" alt="image" src="https://github.com/user-attachments/assets/25aa7814-600b-4a86-8678-12da67817a87" />
 
