@@ -26,32 +26,13 @@ The project utilizes the classic Chinook SQLite database, which includes tables 
 *   **Grouping & Filtering:** Using `GROUP BY` and `HAVING` clauses to segment data.
 *   **Data Sorting:** Applying `ORDER BY DESC` and `LIMIT` to extract top-tier insights.
 
-## Status
+## Results
 
-SELECT 
-    g.Name AS Genre, 
-    SUM(il.Quantity) AS Tracks_Sold
-FROM Genre g
-JOIN Track t ON g.GenreId = t.GenreId
-JOIN InvoiceLine il ON t.TrackId = il.TrackId
-GROUP BY g.Name
-ORDER BY Tracks_Sold DESC
-LIMIT 5;
-
+1. Top 5 Highest Spending customers
 
 <img width="371" height="149" alt="image" src="https://github.com/user-attachments/assets/a24fa4ae-d5b4-41d3-85a7-94c60891866d" />
 
-SELECT 
-    c.FirstName, 
-    c.LastName, 
-    c.Country, 
-    SUM(i.Total) AS Total_Spent
-FROM Customer c
-JOIN Invoice i ON c.CustomerId = i.CustomerId
-GROUP BY c.CustomerId
-ORDER BY Total_Spent DESC
-LIMIT 5;
-
+2. Revenue by country 
 
 <img width="236" height="625" alt="image" src="https://github.com/user-attachments/assets/32fc2a93-0827-45c3-aa43-21896032f1f6" />
 
